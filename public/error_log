@@ -1,0 +1,10 @@
+[01-Oct-2024 08:48:34 UTC] PHP Warning:  require(/home/bqdszoby/public_html/../app/Config/Paths.php): Failed to open stream: No such file or directory in /home/bqdszoby/public_html/index.php on line 48
+[01-Oct-2024 08:48:34 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/bqdszoby/public_html/../app/Config/Paths.php' (include_path='.:/opt/cpanel/ea-php81/root/usr/share/pear') in /home/bqdszoby/public_html/index.php:48
+Stack trace:
+#0 {main}
+  thrown in /home/bqdszoby/public_html/index.php on line 48
+[01-Oct-2024 08:48:35 UTC] PHP Warning:  require(/home/bqdszoby/public_html/../app/Config/Paths.php): Failed to open stream: No such file or directory in /home/bqdszoby/public_html/index.php on line 48
+[01-Oct-2024 08:48:35 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/bqdszoby/public_html/../app/Config/Paths.php' (include_path='.:/opt/cpanel/ea-php81/root/usr/share/pear') in /home/bqdszoby/public_html/index.php:48
+Stack trace:
+#0 {main}
+  thrown in /home/bqdszoby/public_html/index.php on line 48

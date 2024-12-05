@@ -1,0 +1,100 @@
+/* Menetapkan posisi fixed untuk preloader agar selalu di atas layar */
+body {
+  font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif;
+}
+
+@font-face {
+  font-family: "Segoe UI";
+  src: url("/path/to/SegoeUI-Regular.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+.hidden-content {
+  display: none;
+}
+
+.swiper-wrapper {
+  display: flex;
+  align-items: center;
+  margin-left: 70px;
+}
+.swiper-slide {
+  flex: 0 0 auto;
+}
+
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  z-index: 9999;
+  /* Agar tetap di depan konten lain */
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+.box {
+  position: relative;
+  width: 300px;
+  height: 200px;
+  background: black; /* Background hitam untuk kotak */
+  border: 2px solid transparent; /* Awalnya border transparan */
+  border-image: linear-gradient(to bottom, white, rgba(255, 255, 255, 0)) 1; /* Gradasi putih ke transparan */
+}
+
+.box-content {
+  color: white;
+  padding: 10px;
+  z-index: 1;
+  position: relative;
+}
+/* Gambar 3 sebagai background dengan teks di tengah */
+.bg-cover {
+  background-size: cover;
+  background-position: center;
+}
+
+/* Preloader gif centering */
+#preloader img {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 300px;
+  /* Ubah ukuran sesuai kebutuhan */
+  height: auto;
+  /* Menjaga aspek rasio gambar */
+  transform: translate(-50%, -50%);
+}
+
+/* Default Layout untuk Layar Kecil (Slider di atas dan Teks di bawah) */
+.flex {
+  display: flex;
+  flex-direction: column;
+}
+
+@layer utilities {
+  .text-shadow-white {
+    text-shadow: 2px 2px 0 #ffffff, -2px -2px 0 #ffffff, -2px 2px 0 #ffffff, 2px -2px 0 #ffffff;
+  }
+}
+
+/* Layout untuk Layar Lebar (Slider di kanan, Teks di kiri) */
+@media (min-width: 760px) {
+  .flex {
+    flex-direction: row;
+  }
+
+  /* Memastikan teks tetap di kiri dan slider tetap di kanan pada layar besar */
+  .order-1 {
+    order: 1;
+  }
+
+  .order-2 {
+    order: 2;
+  }
+}

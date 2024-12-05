@@ -1,0 +1,875 @@
+@import url('https://fonts.googleapis.com/css2?family=Assistant:wght@200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+body {
+    font-family: "Assistant", sans-serif;
+    background-color: #fff;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center; /* Pusatkan konten secara horizontal */
+    min-height: 100vh; /* Pastikan tinggi minimal halaman sama dengan tinggi viewport */
+    flex-direction: column;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.container {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto; /* Membuat elemen di tengah secara horizontal */
+}
+
+.header {
+    display: flex;
+    justify-content: space-between; /* Menyebarkan elemen header secara merata */
+    align-items: center;
+    background-color: #eb4034;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: 60px;
+    z-index: 1000;
+    padding: 10px 0 5px 0; /* Memberikan ruang dalam */
+}
+
+.header div {
+    border-left: 2px solid transparent;
+    border-color: #fff;
+    text-align: center;
+    color: #fff;
+    transition: transform 0.2s, box-shadow 0.2s;
+    flex: 1; /* Membagi ruang secara merata antara div */
+    padding: 10px 37px; /* Padding atas-bawah 5px, kiri-kanan 36px */
+    cursor: pointer; /* Menambahkan kursor pointer saat hover */
+    width: 100%; /* Mengisi lebar penuh dari header */
+    box-sizing: border-box; /* Menyertakan padding dan border dalam ukuran total elemen */
+}
+
+.header-icon-beranda {
+    width: 24px; /* Adjust the size */
+    height: 24px;
+    margin-left: 15px;
+    transition: fill 0.3s ease;
+    margin-right: 8px; /* Space between icon and text */
+}
+
+.header-icon-promosi {
+    width: 24px; /* Adjust the size */
+    height: 24px;
+    margin-left: 15px;
+    transition: fill 0.3s ease;
+    margin-right: 8px; /* Space between icon and text */
+}
+
+.header-icon-info {
+    width: 24px; /* Adjust the size */
+    height: 24px;
+    margin-left: 27px;
+    transition: fill 0.3s ease;
+    margin-right: 8px; /* Space between icon and text */
+}
+
+.header-icon-anti {
+    width: 24px; /* Adjust the size */
+    height: 24px;
+    margin-left: 40px;
+    transition: fill 0.3s ease;
+    margin-right: 8px; /* Space between icon and text */
+}
+
+.header span {
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: bold;
+    display: block; /* Membuat span berada di bawah ikon */
+    margin-top: 5px; /* Memberikan jarak antara ikon dan teks */
+}
+
+.header a{
+    text-decoration: none;
+}
+
+/* Efek ketika div header aktif */
+.header div:active {
+    transform: translateY(3px);
+}
+
+/* Jika div header aktif, beri latar belakang pada seluruh div */
+.header .active {
+    background-color: #fff;
+    margin-left: 5px;
+    margin-right: -2px;
+    margin-bottom: -2px;
+    color: #eb4034;
+}
+
+/* Ikon putih (default) */
+.white-icon {
+    display: block;
+}
+
+/* Ikon merah, default tersembunyi */
+.red-icon {
+    display: none;
+}
+
+/* Ketika item aktif, ubah ikon putih menjadi merah */
+.header div.active .white-icon {
+    display: none; /* Sembunyikan ikon putih */
+}
+
+.header div.active .red-icon {
+    display: block; /* Tampilkan ikon merah */
+}
+
+/* Efek hover pada menu */
+.header div:hover {
+    background-color: #fff;
+    color: #eb4034;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Efek bayangan saat hover */
+}
+
+.content,
+.promo,
+.section {
+    margin-bottom: 20px;
+}
+
+.content h1 {
+    color: #101111;
+    font-size: 30px;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+.content .h1hijau {
+    color: #31a6dd;
+    font-size: 40px;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+.content h5{
+    margin-top: -20px;
+    font-weight: lighter;
+    margin-left: 10px;
+}
+
+.product-image img{
+    margin-top: 100px;
+    width: 100%;
+    height: 50%;
+}
+
+.content p,
+.section p {
+    font-size: 23px;
+    line-height: 1.6;
+    margin-left: 10px;
+}
+
+.promosi {
+    padding: 1px;
+    background-color: #f1f1f1;
+    font-weight: bold;
+}
+
+.promosi h2{
+    color: #eb4034;
+    font-size: 27px;
+    margin-left: 10px;
+    font-weight: bold;
+}
+
+.promo img,
+.qr-section img {
+    width: 100%;
+}
+
+.social-links-container {
+    margin: 20px 0;
+}
+
+.social-link,
+.social-link1 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #ddd;
+    border-top: 1px solid #ddd;
+    padding: 10px 15px;
+    color: #eb4034;
+    font-weight: bold;
+    background-color: #fff;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.social-link1 i {
+    font-size: 36px;
+}
+
+.social-link img.icon {
+    width: 36px;
+    height: 36px;
+}
+
+.social-link a,
+.social-link1 a {
+    color: #eb4034;
+    text-decoration: none;
+    flex-grow: 1;
+    font-size: 36px;
+    margin-left: 25px;
+}
+
+.social-link .arrow,
+.social-link1 .arrow {
+    font-size: 50px;
+    margin-left: 10px;
+}
+
+.button {
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
+    display: block;
+    height: 20px;
+    width: 40%;
+    padding: 20px ;
+    margin: 10px auto;
+    margin-top: 45px;
+    margin-bottom: 45px;
+    text-align: center;
+    background-color: #eb4034;
+    text-decoration: none;
+    border-radius: 3px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.3s;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+}
+.button1 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
+    display: block;
+    height: 20px;
+    width: 10%;
+    padding: 20px ;
+    margin: 10px auto;
+    margin-top: 45px;
+    margin-bottom: 45px;
+    text-align: center;
+    background-color: #eb4034;
+    text-decoration: none;
+    border-radius: 3px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.3s;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+}
+.button2 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
+    display: block;
+    height: 20px;
+    width: 20%;
+    padding: 20px ;
+    margin: 10px auto;
+    margin-top: 45px;
+    margin-bottom: 45px;
+    text-align: center;
+    background-color: #eb4034;
+    text-decoration: none;
+    border-radius: 3px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.3s;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+}
+.button3 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
+    display: block;
+    height: 20px;
+    width: 40%;
+    padding: 20px ;
+    margin: 10px auto;
+    margin-top: 45px;
+    margin-bottom: 45px;
+    text-align: center;
+    background-color: #eb4034;
+    text-decoration: none;
+    border-radius: 3px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.3s;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+}
+
+.button4 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
+    display: block;
+    height: 20px;
+    width: 10%;
+    padding: 20px ;
+    margin: 10px auto;
+    margin-top: 45px;
+    margin-bottom: 45px;
+    text-align: center;
+    background-color: #eb4034;
+    text-decoration: none;
+    border-radius: 3px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.3s;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+}
+
+.button5 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
+    display: block;
+    height: 20px;
+    width: 55%;
+    padding: 20px ;
+    margin: 10px auto;
+    margin-top: 45px;
+    margin-bottom: 45px;
+    text-align: center;
+    background-color: #eb4034;
+    text-decoration: none;
+    border-radius: 3px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.3s;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+}
+
+.button6 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
+    display: block;
+    height: 20px;
+    width: 40%;
+    padding: 20px ;
+    margin: 10px auto;
+    margin-top: 45px;
+    margin-bottom: 45px;
+    text-align: center;
+    background-color: #eb4034;
+    text-decoration: none;
+    border-radius: 3px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.3s;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+}
+
+.footer {
+    background-color: #ffffff;
+    padding: 10px;
+    border-top: 20px solid #e0e0e0;
+    border-bottom: 15px solid #eb4034;
+    margin-bottom: -30px;
+}
+.footer .info {
+    font-size: 20px;
+    color: #333;
+}
+.footer .info strong {
+    float: left;
+    font-size: 26px;
+    color: #000;
+}
+.footer .slug{
+    float: left;
+    margin: 25px -270px;
+    font-size: 15px;
+} 
+.footer .info .logo {
+    float: right;
+    font-size: 50px;
+    font-weight: bold;
+    color: #000;
+}
+.footer .info .logo span {
+    color: #00aaff;
+}
+
+.footer .links {
+    margin-top: 10px;
+}
+
+.footer .links a {
+    font-size: 20px;
+    color: #ff0000;
+    flex: 1; /* Membagi elemen secara merata */
+    margin: 0 175px; /* Memberi jarak antar elemen */
+}
+    
+.footer .links a:first-child {
+    margin-left: 0;
+}
+    
+.footer .links a:last-child {
+    margin-right: 0;
+}
+.footer .links a:hover {
+    text-decoration: underline;
+}
+
+/* //////////////////////////////////////////////////// */
+
+@media (max-width: 1024px) {
+    .container {
+        width: 100%;
+        max-width: 100%;
+    }
+    .header {
+        display: flex;
+        justify-content: space-between; /* Menyebarkan elemen header secara merata */
+        align-items: center;
+        background-color: #eb4034;
+        position: sticky;
+        top: 0;
+        width: 100%;
+        height: 150px;
+        z-index: 1000;
+        padding: 10px 0 5px 0; /* Memberikan ruang dalam */
+    }
+    
+    .header div {
+        border-left: 2px solid transparent;
+        border-color: #fff;
+        text-align: center;
+        color: #fff;
+        transition: transform 0.2s, box-shadow 0.2s;
+        flex: 1; /* Membagi ruang secara merata antara div */
+        padding: 37px 65px; /* Padding atas-bawah 5px, kiri-kanan 36px */
+        cursor: pointer; /* Menambahkan kursor pointer saat hover */
+        width: 100%; /* Mengisi lebar penuh dari header */
+        box-sizing: border-box; /* Menyertakan padding dan border dalam ukuran total elemen */
+    }
+    
+    .header-icon-beranda {
+        width: 50px; /* Adjust the size */
+        height: 50px;
+        margin-left: 20px;
+        transition: fill 0.3s ease;
+        margin-right: 8px; /* Space between icon and text */
+    }
+    
+    .header-icon-promosi {
+        width: 50px; /* Adjust the size */
+        height: 50px;
+        margin-left: 20px;
+        transition: fill 0.3s ease;
+        margin-right: 8px; /* Space between icon and text */
+    }
+    
+    .header-icon-info {
+        width: 50px; /* Adjust the size */
+        height: 50px;
+        margin-left: 37px;
+        transition: fill 0.3s ease;
+        margin-right: 8px; /* Space between icon and text */
+    }
+    
+    .header-icon-anti {
+        width: 50px; /* Adjust the size */
+        height: 50px;
+        margin-left: 55px;
+        transition: fill 0.3s ease;
+        margin-right: 8px; /* Space between icon and text */
+    }
+    
+    .header span {
+        text-decoration: none;
+        font-size: 23px;
+        font-weight: bold;
+        display: block; /* Membuat span berada di bawah ikon */
+        margin-top: 5px; /* Memberikan jarak antara ikon dan teks */
+    }
+    
+    .header a{
+        text-decoration: none;
+    }
+    
+    /* Efek ketika div header aktif */
+    .header div:active {
+        transform: translateY(3px);
+    }
+    
+    /* Jika div header aktif, beri latar belakang pada seluruh div */
+    .header .active {
+        background-color: #fff;
+        margin-left: 5px;
+        margin-right: -2px;
+        margin-bottom: -2px;
+        color: #eb4034;
+    }
+    
+    /* Ikon putih (default) */
+    .white-icon {
+        display: block;
+    }
+    
+    /* Ikon merah, default tersembunyi */
+    .red-icon {
+        display: none;
+    }
+    
+    /* Ketika item aktif, ubah ikon putih menjadi merah */
+    .header div.active .white-icon {
+        display: none; /* Sembunyikan ikon putih */
+    }
+    
+    .header div.active .red-icon {
+        display: block; /* Tampilkan ikon merah */
+    }
+    
+    /* Efek hover pada menu */
+    .header div:hover {
+        background-color: #fff;
+        color: #eb4034;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Efek bayangan saat hover */
+    }
+    
+    .content,
+    .promo,
+    .section {
+        margin-bottom: 20px;
+    }
+
+    .content h1 {
+        color: #000000;
+        font-size: 60px;
+        font-weight: bold;
+        margin-left: 20px;
+    }
+
+    .content .h1hijau {
+        color: #31a6dd;
+        font-size: 60px;
+        font-weight: bold;
+        margin-top: 10px;
+        margin-left: 20px;
+    }
+    
+    .content h5{
+        font-size: 20px;
+        margin-left: 20px;
+        font-weight: lighter;
+    }
+    
+    .product-image img{
+    margin-top: 100px;
+    }
+    .content p,
+    .section p {
+        margin-left: 30px;
+        font-size: 40px;
+        line-height: 1.6;
+    }
+    
+    .promosi {
+        padding: 1px;
+        background-color: #f1f1f1;
+        font-weight: bold;
+    }
+    
+    .promosi h2{
+        color: #eb4034;
+        font-size: 50px;
+        margin-left: 19px;
+        font-weight: bold;
+    }
+    
+    .promo img,
+    .qr-section img {
+        width: 100%;
+    }
+    
+    .social-links-container {
+        margin: 20px 0;
+    }
+    
+    .social-link,
+    .social-link1 {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 1px solid #ddd;
+        border-top: 1px solid #ddd;
+        padding: 10px 15px;
+        color: #eb4034;
+        font-weight: bold;
+        background-color: #fff;
+        transition: background-color 0.3s, box-shadow 0.3s;
+    }
+    
+    .social-link1 i {
+        font-size: 56px;
+    }
+    
+    .social-link img.icon {
+        width: 56px;
+        height: 56px;
+    }
+    
+    .social-link a,
+    .social-link1 a {
+        color: #eb4034;
+        text-decoration: none;
+        flex-grow: 1;
+        font-size: 56px;
+        margin-left: 25px;
+    }
+    
+    .social-link .arrow,
+    .social-link1 .arrow {
+        font-size: 50px;
+        margin-left: 10px;
+    }
+    
+    .button {
+        display: flex;
+        align-items: center;
+        font-size: 45px;
+        font-weight: bold;
+        color: #fff;
+        height: 20px;
+        width: 52%;
+        padding: 50px ;
+        margin: 10px auto;
+        margin-top: 45px;
+        margin-bottom: 45px;
+        text-align: center;
+        background-color: #eb4034;
+        text-decoration: none;
+        border-radius: 3px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        transition: box-shadow 0.3s;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        -ms-border-radius: 3px;
+        -o-border-radius: 3px;
+    }
+    .button1 {
+        display: flex;
+        align-items: center; /* Pusatkan secara vertikal */
+        justify-content: center; /* Pusatkan secara horizontal */
+        font-size: 45px;
+        font-weight: bold;
+        color: #fff;
+        height: 20px; /* Ini bisa dihapus jika ingin otomatis mengikuti padding */
+        width: 15%; /* Bisa diubah sesuai kebutuhan */
+        padding: 50px;
+        margin: 10px auto;
+        margin-top: 45px;
+        margin-bottom: 45px;
+        background-color: #eb4034;
+        text-decoration: none;
+        border-radius: 3px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        transition: box-shadow 0.3s;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        -ms-border-radius: 3px;
+        -o-border-radius: 3px;
+    }
+    .button2 {
+        display: flex;
+        align-items: center; /* Pusatkan secara vertikal */
+        justify-content: center; /* Pusatkan secara horizontal */
+        font-size: 45px;
+        font-weight: bold;
+        color: #fff;
+        height: 20px; /* Ini bisa dihapus jika ingin otomatis mengikuti padding */
+        width: 20%; /* Bisa diubah sesuai kebutuhan */
+        padding: 50px;
+        margin: 10px auto;
+        margin-top: 45px;
+        margin-bottom: 45px;
+        background-color: #eb4034;
+        text-decoration: none;
+        border-radius: 3px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        transition: box-shadow 0.3s;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        -ms-border-radius: 3px;
+        -o-border-radius: 3px;
+    }
+    .button3 {
+        display: flex;
+        align-items: center; /* Pusatkan secara vertikal */
+        justify-content: center; /* Pusatkan secara horizontal */
+        font-size: 45px;
+        font-weight: bold;
+        color: #fff;
+        height: 20px; /* Ini bisa dihapus jika ingin otomatis mengikuti padding */
+        width: 55%; /* Bisa diubah sesuai kebutuhan */
+        padding: 50px;
+        margin: 10px auto;
+        margin-top: 45px;
+        margin-bottom: 45px;
+        background-color: #eb4034;
+        text-decoration: none;
+        border-radius: 3px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        transition: box-shadow 0.3s;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        -ms-border-radius: 3px;
+        -o-border-radius: 3px;
+    }
+    
+    .button4 {
+        display: flex;
+        align-items: center; /* Pusatkan secara vertikal */
+        justify-content: center; /* Pusatkan secara horizontal */
+        font-size: 45px;
+        font-weight: bold;
+        color: #fff;
+        height: 20px; /* Ini bisa dihapus jika ingin otomatis mengikuti padding */
+        width: 15%; /* Bisa diubah sesuai kebutuhan */
+        padding: 50px;
+        margin: 10px auto;
+        margin-top: 45px;
+        margin-bottom: 45px;
+        background-color: #eb4034;
+        text-decoration: none;
+        border-radius: 3px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        transition: box-shadow 0.3s;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        -ms-border-radius: 3px;
+        -o-border-radius: 3px;
+    }
+    
+    .button5 {
+        display: flex;
+        align-items: center; /* Pusatkan secara vertikal */
+        justify-content: center; /* Pusatkan secara horizontal */
+        font-size: 45px;
+        font-weight: bold;
+        color: #fff;
+        height: 20px; /* Ini bisa dihapus jika ingin otomatis mengikuti padding */
+        width: 65%; /* Bisa diubah sesuai kebutuhan */
+        padding: 50px;
+        margin: 10px auto;
+        margin-top: 45px;
+        margin-bottom: 45px;
+        background-color: #eb4034;
+        text-decoration: none;
+        border-radius: 3px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        transition: box-shadow 0.3s;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        -ms-border-radius: 3px;
+        -o-border-radius: 3px;
+    }
+    
+    .button6 {
+        display: flex;
+        align-items: center; /* Pusatkan secara vertikal */
+        justify-content: center; /* Pusatkan secara horizontal */
+        font-size: 45px;
+        font-weight: bold;
+        color: #fff;
+        height: 20px; /* Ini bisa dihapus jika ingin otomatis mengikuti padding */
+        width: 45%; /* Bisa diubah sesuai kebutuhan */
+        padding: 50px;
+        margin: 10px auto;
+        margin-top: 45px;
+        margin-bottom: 45px;
+        background-color: #eb4034;
+        text-decoration: none;
+        border-radius: 3px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        transition: box-shadow 0.3s;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        -ms-border-radius: 3px;
+        -o-border-radius: 3px;
+    }
+    
+    .footer {
+        background-color: #ffffff;
+        padding-top: 40px;
+        border-top: 50px solid #e0e0e0;
+        border-bottom: 15px solid #eb4034;
+        margin-bottom: -30px;
+    }
+    .footer .info {
+        font-size: 14px;
+        color: #333;
+    }
+    .footer .info strong {
+        margin-top: -40px;
+        float: left;
+        font-size: 36px;
+        color: #000;
+    }
+    .footer .slug{
+        float: left;
+        margin: 10px -370px;
+        font-size: 30px;
+    } 
+    .footer .info .logo {
+        float: right;
+        font-size: 100px;
+        font-weight: bold;
+        color: #000;
+    }
+    .footer .info .logo span {
+        color: #00aaff;
+    }
+
+    .footer .links a {
+        font-size: 40px;
+        color: #ff0000;
+        flex: 1; /* Membagi elemen secara merata */
+        margin: 0 110px; /* Memberi jarak antar elemen */
+    }
+    
+    .footer .links a:first-child {
+        margin-left: 0;
+    }
+    
+    .footer .links a:last-child {
+        margin-right: 0;
+    }
+    
+    .footer .links a:hover {
+        text-decoration: underline;
+    }
+    
+}

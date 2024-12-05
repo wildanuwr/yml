@@ -1,0 +1,9 @@
+<svg width="30" height="6" viewBox="0 0 30 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <html id="simulator">
+    <head>
+      <style>html { background: white !important; overflow: hidden !important; } html#simulator &gt; body &gt; *:not(#app) { display: none; }</style>
+    </head>
+    <body>
+      <div id="app" data-js="simulator-extension"/>
+    </body>
+  </html></svg>
