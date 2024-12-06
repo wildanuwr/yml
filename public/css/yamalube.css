@@ -84,6 +84,22 @@ img {
 }
 
 /* Layout untuk Layar Lebar (Slider di kanan, Teks di kiri) */
+@media (min-width: 1024px) {
+  .flex {
+    flex-direction: row;
+  }
+
+  /* Memastikan teks tetap di kiri dan slider tetap di kanan pada layar besar */
+  .order-1 {
+    order: 1;
+  }
+
+  .order-2 {
+    order: 2;
+  }
+}
+
+
 @media (min-width: 760px) {
   .flex {
     flex-direction: row;
